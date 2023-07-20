@@ -1,0 +1,24 @@
+
+  <div class="container h-100" style="border:2px solid black">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-md-6">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email"  placeholder="Enter email" formControlName="email">
+                <small *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Please enter valid email</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+                <small *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Please enter validpasswr</small>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+            <button routerLink="/signup"  class="btn btn-primary">Go back</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  
